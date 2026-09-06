@@ -29,7 +29,7 @@ export async function getStaticPaths() {
 
   DBConnectionClose();
   return {
-    fallback: false,
+    fallback: "blocking",
     paths: meetupIds.map((id) => ({ params: { meetupId: id._id.toString() } })),
   };
 }
